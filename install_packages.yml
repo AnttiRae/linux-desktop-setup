@@ -1,0 +1,44 @@
+---
+- name: Install packages from config
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ system_packages }}"
+  loop_control:
+    label: "Installed {{ item }}"
+
+- name: Install oh my zsh
+  git:
+    repo: https://github.com/ohmyzsh/ohmyzsh.git
+    dest: ~/.oh-my-zsh
+    depth: 1
+
+- name: Install zsh autosuggestions
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+    depth: 1
+
+- name: Install zsh highlight
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+    depth: 1
+
+- name: Copy dotfiles
+  git:
+    repo: https://github.com/AnttiRae/.dotfiles.git
+    dest: ~/.dotfiles
+    force: true
+    bare: true
+
+- name: Reset dotfiles
+  ansible.builtin.shell: 
+    cmd: /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard
+    chdir: ~/
+
+- name: Hide untracked files
+  ansible.builtin.shell: 
+    cmd: /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no

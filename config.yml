@@ -1,0 +1,12 @@
+
+system_packages:
+  - awesome
+  - git
+  - cowsay
+  - vim
+  - flameshot
+  - rofi
+  - nitrogen
+  - picom
+  - zsh
+  - lsd

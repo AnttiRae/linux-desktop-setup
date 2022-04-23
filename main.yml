@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: false
+  connection: local
+
+  vars_files:
+    - config.yml
+
+  tasks:
+    - import_tasks: install_packages.yml
