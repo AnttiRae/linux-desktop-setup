@@ -8,3 +8,4 @@ vagrant is used to create VM for dev and testing purposes before using on actual
 - python
 - pip (or pipenv)
 - ansible
+- vagrant
