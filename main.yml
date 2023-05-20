@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: localhost
   become: false
   connection: local
 
@@ -7,4 +7,6 @@
     - config.yml
 
   tasks:
-    - import_tasks: install_packages.yml
+    - import_tasks: tasks/install_packages.yml
+    - import_tasks: tasks/add_dotfiles.yml
+    - import_tasks: tasks/conf_zsh.yml

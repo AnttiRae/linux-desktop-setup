@@ -1,0 +1,19 @@
+---
+- name: Install packages from config
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ system_packages }}"
+  loop_control:
+    label: "Installed {{ item }}"
+
+- name: Kubectl - get latest release
+  shell:
+    cmd: curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+
+- name: install kubectl
+  become: true
+  shell:
+    cmd: install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl

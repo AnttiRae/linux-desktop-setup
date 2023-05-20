@@ -1,0 +1,15 @@
+- name: Copy dotfiles
+  git:
+    repo: https://github.com/AnttiRae/.dotfiles.git
+    dest: ~/.dotfiles
+    force: true
+    bare: true
+
+- name: Reset dotfiles
+  shell:
+    cmd: /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME reset --hard
+    chdir: ~/
+
+- name: Hide untracked files
+  shell:
+    cmd: /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
