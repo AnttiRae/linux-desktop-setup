@@ -1,5 +1,5 @@
 ---
-- name: Install packages from config
+- name: Install system packages
   become: true
   package:
     name: "{{ item }}"
@@ -17,3 +17,12 @@
   become: true
   shell:
     cmd: install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
+
+- name: Install flat paks
+  community.general.flatpak:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ flat_paks }}"
+  loop_control:
+    label: "Installed {{ item }}"
