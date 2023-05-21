@@ -1,14 +1,23 @@
 # linux-desktop-setup
 Ansible playbook to setup linux desktop (Fedora)
 
-This ansible playbook is meant to setup a linux desktop envinronment for general use. (coding, gaming, etc)
+This ansible playbook is meant to setup a fedora workstation for general use. (coding, gaming, etc)
 vagrant is used to create VM for dev and testing purposes before using on actual hardware
 
-## running (needs sudo)
-'ansible-playbook main.yml -K'
+## Running the playbook (needs sudo)
+`ansible-playbook main.yml -K`
 
 ## requirements
-- python
-- pip (or pipenv)
 - ansible
-- vagrant
+
+### todo
+- [x] wallpapers
+- [ ] nextcloud sync
+- [x] git global config
+	- [x] name
+	- [x] email
+- [x] media keys
+- [x] gnome DE config
+- [ ] notes from git
+- [ ] flatseal perms
+- [ ] RPM fusion rpm
