@@ -1,4 +1,9 @@
 ---
+- name: Download wallpapers
+  git:
+    repo: https://github.com/AnttiRae/Wallpapers.git
+    dest: ~/Pictures/Wallpapers
+
 - name: Install gnome shell extensions
   become: true
   package:
@@ -30,17 +35,20 @@
 - name: install clipboard indicator extension
   git:
       repo: https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator.git
-      dest: ~/.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com
+      dest: "~/.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com"
+      force: yes
 
 - name: install quick settings tweaks extension
   git:
       repo: https://github.com/qwreey75/quick-settings-tweaks.git
-      dest: ~/.local/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
+      dest: "~/.local/share/gnome-shell/extensions/quick-settings-tweaks@qwreey"
+      force: yes
 
 - name: install tray icons reloaded extension
   git:
       repo: https://github.com/MartinPL/Tray-Icons-Reloaded.git
-      dest: ~/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl
+      dest: "~/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl"
+      force: yes
 
 - name: Set gnome config keys and values
   community.general.dconf:

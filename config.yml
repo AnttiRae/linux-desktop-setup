@@ -94,7 +94,8 @@ gnome_confs:
   /org/gnome/shell/extensions/stocks/ticker-display-variation: "'tremendous'"
   /org/gnome/shell/extensions/stocks/ticker-interval: "600"
   /org/gnome/shell/extensions/stocks/ticker-stock-amount: "5"
-  ###
+  # wallpaper
+  /org/gnome/desktop/background/picture-uri-dark: "'file:///home/antti/Pictures/Wallpapers/030.jpg'"
   ##
   #
   #
