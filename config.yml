@@ -5,6 +5,9 @@ system_packages:
   - zsh
   - lsd
 
+gnome-shell-extensions:
+  - gnome-shell-extension-pop-shell
+
 flat_paks:
   - com.github.tchx84.Flatseal
   - org.nickvision.tubeconverter
@@ -16,3 +19,84 @@ flat_paks:
   - com.discordapp.Discord
   - ca.desrt.dconf-editor
   - com.bitwarden.desktop
+
+gnome_confs:
+  /org/gnome/GWeather4/temperature: "'centigrade'"
+  /org/gnome/desktop/interface/color-scheme: "'prefer-dark'"
+  /org/gnome/Weather/locations: "[<(uint32 2, <('Turku', 'EFTU', false, [(1.0562150914829993, 0.38862665259516821)], @a(dd) [])>)>]"
+  /org/gnome/desktop/interface/gtk-theme: "'Adwaita-dark'"
+  /org/gnome/desktop/peripherals/mouse/accel-profile: "'flat'"
+  /org/gnome/desktop/peripherals/mouse/speed: "0.061946902654867353"
+  # keybindings
+  /org/gnome/desktop/wm/keybindings/move-to-workspace-2: "['<Shift><Super>2']"
+  /org/gnome/desktop/wm/keybindings/close: "['<Super>x']"
+  /org/gnome/desktop/wm/keybindings/move-to-workspace-1: "['<Shift><Super>1']"
+  /org/gnome/desktop/wm/keybindings/move-to-workspace-3: "['<Shift><Super>3']"
+  /org/gnome/desktop/wm/keybindings/move-to-workspace-4: "['<Shift><Super>4']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-1: "['<Super>1']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-2: "['<Super>2']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-3: "['<Super>3']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-4: "['<Super>4']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-left: "['<Control><Super>Left']"
+  /org/gnome/desktop/wm/keybindings/switch-to-workspace-right: "['<Control><Super>Right']"
+  /org/gnome/desktop/wm/preferences/resize-with-right-button: "true"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']"
+  /org/gnome/settings-daemon/plugins/media-keys/next: "['<Super>period']"
+  /org/gnome/settings-daemon/plugins/media-keys/play: "['<Super>minus']"
+  /org/gnome/settings-daemon/plugins/media-keys/previous: "['<Super>comma']"
+  /org/gnome/settings-daemon/plugins/media-keys/www: "['<Super>p']"
+  /org/gnome/shell/keybindings/show-screenshot-ui: "['<Shift><Super>s']"
+  # terminal
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/binding: "'<Super>Return'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/command: "'gnome-terminal'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/name: "'open gnome terminal'"
+  # file manager
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/binding: "'<Super>e'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/command: "'nautilus'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/name: "'open nautilus file manager'"
+  # notes
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/binding: "'<Super>i'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/command: "'flatpak run md.obsidian.Obsidian'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/name: "'open obisidian notes'"
+  # discord
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding: "'<Super>d'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command: "'flatpak run com.discordapp.Discord'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name: "'Open discord'"
+  # music box
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding: "'<Super>a''"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command: "'flatpak run com.github.taiko2k.tauonmb'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name: "'Open music player'"
+  #shell extensions config
+  /org/gnome/shell/disabled-extensions: ['background-logo@fedorahosted.org', 'window-list@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+  /org/gnome/shell/enabled-extensions: ['trayIconsReloaded@selfmade.pl', 'gamemode@christian.kellner.me', 'pop-shell@system76.com', 'quick-settings-tweaks@qwreey', 'stocks@infinicode.de', 'clipboard-indicator@tudmotu.com', 'appindicatorsupport@rgcjonas.gmail.com']
+  # pop shell
+  /org/gnome/shell/extensions/pop-shell/gap-inner: "uint32 1"
+  /org/gnome/shell/extensions/pop-shell/hap-outer: "uint32 1"
+  /org/gnome/shell/extensions/pop-shell/mouse-cursor: "false"
+  /org/gnome/shell/extensions/pop-shell/show-skip-taskbar: "false"
+  /org/gnome/shell/extensions/pop-shell/smart-gaps: "true"
+  /org/gnome/shell/extensions/pop-shell/stacking-with-mouse: "true"
+  /org/gnome/shell/extensions/pop-shell/tile-by-default: "true"
+  /org/gnome/shell/extensions/pop-shell/toggle-stacking-global: "['<Super>q']"
+  # quick settings tweaks extension
+  /org/gnome/shell/extensions/quick-settings-tweaks/datemenu-remove-media-control: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/datemenu-remove-notifications: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/media-control-enabled: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/notifications-enabled: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/notifications-hide-when-no-notifications: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/notifications-integrated: "false"
+  /org/gnome/shell/extensions/quick-settings-tweaks/output-show-selected: "true"
+  # stonks extension
+  /org/gnome/shell/extensions/stocks/position-in-panel: "'left'"
+  /org/gnome/shell/extensions/stocks/show-ticker-off-market-prices: "true"
+  /org/gnome/shell/extensions/stocks/symbol-pairs: "'W3siaWQiOiJmYTBkMjdlMTczNTQwMzkzMDljOWM2ZTM2NDUyNjIwNiIsIm5hbWUiOiJcXF5PTVhIUEkiLCJzeW1ib2wiOiJeT01YSFBJIiwicHJvdmlkZXIiOiJ5YWhvbyIsInNob3dJblRpY2tlciI6dHJ1ZX0seyJpZCI6IjQ4ZjdlODc1NDlhMWIwYmYzYmVkNmZhNjY0NTI2MjA2IiwibmFtZSI6IkZPUlRVTS5IRSIsInN5bWJvbCI6IkZPUlRVTS5IRSIsInByb3ZpZGVyIjoieWFob28iLCJzaG93SW5UaWNrZXIiOnRydWV9LHsiaWQiOiJjMmNjYzljYzJiNWRlNzZiZDljMGY0NGY2NDUyNjIwNiIsIm5hbWUiOiJFTElTQS5IRSIsInN5bWJvbCI6IkVMSVNBLkhFIiwicHJvdmlkZXIiOiJ5YWhvbyIsInNob3dJblRpY2tlciI6dHJ1ZX0seyJpZCI6ImI2MGM4OWIzYTNhNWI5ZmE4NDg0ZGRlZDY0NTI2MjA2IiwibmFtZSI6IktFTVBPV1IuSEUiLCJzeW1ib2wiOiJLRU1QT1dSLkhFIiwicHJvdmlkZXIiOiJ5YWhvbyIsInNob3dJblRpY2tlciI6dHJ1ZX0seyJpZCI6IjEwMmU4MDZhMTJlYTQwMjhiM2U5NjdkNDY0NTI2MjA2IiwibmFtZSI6Ik5EQS1GSS5IRSIsInN5bWJvbCI6Ik5EQS1GSS5IRSIsInByb3ZpZGVyIjoieWFob28iLCJzaG93SW5UaWNrZXIiOnRydWV9LHsiaWQiOiI5YmM4Zjk3ZmUxZjM3MjM3ZjkxZDY0OTk2NDUyNjIwNiIsIm5hbWUiOiJPUk5CVi5IRSIsInN5bWJvbCI6Ik9STkJWLkhFIiwicHJvdmlkZXIiOiJ5YWhvbyIsInNob3dJblRpY2tlciI6dHJ1ZX0seyJpZCI6IjViOGZlNTcyM2MxMzA3ZmJiNzBjMmQxZjY0NTI2MjA2IiwibmFtZSI6IlNBTVBPLkhFIiwic3ltYm9sIjoiU0FNUE8uSEUiLCJwcm92aWRlciI6InlhaG9vIiwic2hvd0luVGlja2VyIjp0cnVlfSx7ImlkIjoiYzY3MjM4MTg2M2Y3ZjY1NDQ3YzRlZTViNjQ1MjYyMDYiLCJuYW1lIjoiVFhOIiwic3ltYm9sIjoiVFhOIiwicHJvdmlkZXIiOiJ5YWhvbyIsInNob3dJblRpY2tlciI6dHJ1ZX0seyJpZCI6IjE3NTA3MDQzNTcwOWZhZGFkM2M3OTI3NDY0NTI2MjA2IiwibmFtZSI6IlZaIiwic3ltYm9sIjoiVloiLCJwcm92aWRlciI6InlhaG9vIiwic2hvd0luVGlja2VyIjp0cnVlfSx7ImlkIjoiNzU4ZmE1Mjk2OTg4YjYzZjdiYjBlNDY5NjQ1MjYyMDYiLCJuYW1lIjoiTUVUU0IuSEUiLCJzeW1ib2wiOiJNRVRTQi5IRSIsInByb3ZpZGVyIjoieWFob28iLCJzaG93SW5UaWNrZXIiOnRydWV9XQ=='"
+  /org/gnome/shell/extensions/stocks/ticker-display-variation: "'tremendous'"
+  /org/gnome/shell/extensions/stocks/ticker-interval: "600"
+  /org/gnome/shell/extensions/stocks/ticker-stock-amount: "5"
+  ###
+  ##
+  #
+  #
+  #
+  ##
+  #
