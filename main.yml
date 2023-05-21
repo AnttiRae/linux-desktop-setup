@@ -1,12 +1,23 @@
 ---
 - hosts: localhost
   connection: local
+  gather_facts: true
 
   vars_files:
     - config.yml
 
+  vars_prompt:
+
+    - name: git_email
+      prompt: Email for git
+      private: false
+
+    - name: git_name
+      prompt: Name for git
+      private: false
+
   tasks:
-  #  - import_tasks: tasks/install_packages.yml
-#    - import_tasks: tasks/add_dotfiles.yml
-#    - import_tasks: tasks/conf_zsh.yml
-    - import_tasks: tasks/conf_gnome_for_loop.yml
+    - import_tasks: tasks/install_packages.yml
+    - import_tasks: tasks/add_dotfiles.yml
+    - import_tasks: tasks/conf_zsh.yml
+    - import_tasks: tasks/conf_gnome.yml

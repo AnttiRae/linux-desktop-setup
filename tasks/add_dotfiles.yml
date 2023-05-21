@@ -17,3 +17,15 @@
 - name: Hide untracked files
   shell:
     cmd: /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME config --local status.showUntrackedFiles no
+
+- name: Set git email
+  git_config:
+      scope: global
+      value: "{{ git_email }}"
+      name: user.email
+
+- name: Set git name
+  git_config:
+    scope: global
+    value: "{{ git_name }}"
+    name: user.name
