@@ -5,8 +5,9 @@ system_packages:
   - zsh
   - lsd
 
-gnome-shell-extensions:
+gnome_shell_extensions:
   - gnome-shell-extension-pop-shell
+
 
 flat_paks:
   - com.github.tchx84.Flatseal
@@ -63,9 +64,9 @@ gnome_confs:
   /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command: "'flatpak run com.discordapp.Discord'"
   /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name: "'Open discord'"
   # music box
-  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/binding: "'<Super>a''"
-  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/command: "'flatpak run com.github.taiko2k.tauonmb'"
-  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/name: "'Open music player'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/binding: "'<Super>a'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/command: "'flatpak run com.github.taiko2k.tauonmb'"
+  /org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/name: "'Open music player'"
   #shell extensions config
   /org/gnome/shell/disabled-extensions: ['background-logo@fedorahosted.org', 'window-list@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
   /org/gnome/shell/enabled-extensions: ['trayIconsReloaded@selfmade.pl', 'gamemode@christian.kellner.me', 'pop-shell@system76.com', 'quick-settings-tweaks@qwreey', 'stocks@infinicode.de', 'clipboard-indicator@tudmotu.com', 'appindicatorsupport@rgcjonas.gmail.com']

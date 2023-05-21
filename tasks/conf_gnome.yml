@@ -1,0 +1,53 @@
+---
+- name: Install gnome shell extensions
+  become: true
+  package:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - "{{ gnome_shell_extensions }}"
+  loop_control:
+    label: "Installed {{ item }}"
+
+- name: Check latest stocks extensions
+  uri:
+    url: https://api.github.com/repos/cinatic/stocks-extension/releases/latest
+    return_content: true
+    body_format: json
+  register: stocks_latest
+
+- name: Make installation directory for stocks extension
+  file:
+    path: ~/.local/share/gnome-shell/extensions/stocks@infinicode.de
+    state: directory
+
+- name: Install latest stocks extension
+  unarchive:
+    src: "https://github.com/cinatic/stocks-extension/releases/download/{{ stocks_latest.json.tag_name }}/stocks-extension.zip"
+    dest: ~/.local/share/gnome-shell/extensions/stocks@infinicode.de
+    remote_src: true
+
+- name: install clipboard indicator extension
+  git:
+      repo: https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator.git
+      dest: ~/.local/share/gnome-shell/extensions/clipboard-indicator@tudmotu.com
+
+- name: install quick settings tweaks extension
+  git:
+      repo: https://github.com/qwreey75/quick-settings-tweaks.git
+      dest: ~/.local/share/gnome-shell/extensions/quick-settings-tweaks@qwreey
+
+- name: install tray icons reloaded extension
+  git:
+      repo: https://github.com/MartinPL/Tray-Icons-Reloaded.git
+      dest: ~/.local/share/gnome-shell/extensions/trayIconsReloaded@selfmade.pl
+
+- name: Set gnome config keys and values
+  community.general.dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+    state: present
+  with_dict:
+    - "{{ gnome_confs }}"
+  loop_control:
+    label: "Set {{ item.key }} to {{ item.value }}"
